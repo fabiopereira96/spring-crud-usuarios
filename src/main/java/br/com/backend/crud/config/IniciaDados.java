@@ -21,9 +21,6 @@ public class IniciaDados implements ApplicationListener<ContextRefreshedEvent> {
 
         if(usuarios.isEmpty()){
             criarUsuario("Usuario 1", "usuario1@email.com", "senha1");
-            criarUsuario("Usuario 2", "usuario2@email.com", "senha2");
-        } else {
-
         }
     }
 

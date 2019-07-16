@@ -1,6 +1,10 @@
 package br.com.backend.crud.entities;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Usuario {
@@ -11,8 +15,10 @@ public class Usuario {
 
     @Column
     private String nome;
-    @Column
+
+    @Column(unique = true)
     private String email;
+
     @Column
     private String senha;
 
@@ -54,5 +60,13 @@ public class Usuario {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "codigo=" + codigo +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
