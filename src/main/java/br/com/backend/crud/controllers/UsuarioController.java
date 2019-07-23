@@ -1,7 +1,6 @@
 package br.com.backend.crud.controllers;
 
 import br.com.backend.crud.entities.Usuario;
-import br.com.backend.crud.repositories.UsuarioRepository;
 import br.com.backend.crud.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,16 +14,13 @@ public class UsuarioController {
     @Autowired
     private UsuarioService service;
 
-    @Autowired
-    private UsuarioRepository repository;
-
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public ResponseEntity consultar(){
+    public ResponseEntity consultar() {
         return service.buscaTodos();
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public ResponseEntity<Void> cadastrar(@RequestBody Usuario usuario){
+    public ResponseEntity<Void> cadastrar(@RequestBody Usuario usuario) {
         service.cadastrar(usuario);
         return new ResponseEntity<>(HttpStatus.OK);
     }

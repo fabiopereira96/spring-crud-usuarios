@@ -16,6 +16,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+//TODO
+// Criar usuarioModel para trafegar durante as requisições e converter para a entidade apenas na hora de persistir
+// no banco de dados.
 @Service
 public class UsuarioServiceImpl implements UsuarioService {
 
