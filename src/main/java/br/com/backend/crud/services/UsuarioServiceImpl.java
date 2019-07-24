@@ -36,6 +36,19 @@ public class UsuarioServiceImpl implements UsuarioService {
     }
 
     @Override
+    public void deletar(Integer codigo){
+        try {
+            repository.deleteById(codigo);
+        } catch (Exception e){
+            Usuario usuario = new Usuario();
+            usuario.setCodigo(codigo);
+            
+            throw new UsuarioNaoProcessadoException(usuario, e,
+                    new ResponseErro(new Date(), UsuarioMessage.USUARIO_DELETE, UsuarioMessage.USUARIO_DELETE_MENSAGEM));
+        }
+    }
+
+    @Override
     public ResponseEntity buscaTodos() {
         try {
             List<Usuario> usuarios = repository.findAll();

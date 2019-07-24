@@ -25,6 +25,20 @@ public class UsuarioController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/{codigo}", method = RequestMethod.PUT)
+    public ResponseEntity<Void> alterar(@PathVariable Integer codigo, @RequestBody Usuario usuario) {
+        usuario.setCodigo(codigo);
+        service.cadastrar(usuario);
+
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/{codigo}", method = RequestMethod.DELETE)
+    public ResponseEntity<Void> deletar(@PathVariable Integer codigo) {
+        service.deletar(codigo);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
     @RequestMapping(value = "/{codigo}", method = RequestMethod.GET)
     public ResponseEntity consultarPorCodigo(@PathVariable Integer codigo){
         return service.buscaPorCodigo(codigo);

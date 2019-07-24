@@ -7,6 +7,8 @@ public interface UsuarioService {
 
     void cadastrar(Usuario usuario);
 
+    void deletar(Integer codigo);
+
     ResponseEntity buscaTodos();
 
     ResponseEntity buscaPorPagina(int page, int size);
