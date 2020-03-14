@@ -1,10 +1,11 @@
-package br.com.backend.crud.services;
+package br.com.backend.crud.services.impl;
 
 import br.com.backend.crud.entities.Usuario;
 import br.com.backend.crud.exceptions.UsuarioNaoProcessadoException;
 import br.com.backend.crud.exceptions.models.ResponseErro;
 import br.com.backend.crud.messages.UsuarioMessage;
 import br.com.backend.crud.repositories.UsuarioRepository;
+import br.com.backend.crud.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -16,9 +17,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-//TODO
-// Criar usuarioModel para trafegar durante as requisições e converter para a entidade apenas na hora de persistir
-// no banco de dados.
 @Service
 public class UsuarioServiceImpl implements UsuarioService {
 

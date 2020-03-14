@@ -25,8 +25,6 @@ public class IniciaDados implements ApplicationListener<ContextRefreshedEvent> {
     }
 
     private void criarUsuario(String nome, String email, String senha){
-        Usuario usuario = new Usuario(nome, email, senha);
-
-        repository.save(usuario);
+        repository.save(new Usuario(nome, email, senha));
     }
 }
